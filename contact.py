@@ -33,8 +33,8 @@ def delete_contact(self):
 
         Contact.contact_list.remove(self)
 
-        @classmethod
-        
+@classmethod
+
 def find_by_number(cls,number):
         '''
         Method that takes in a number and returns a contact that matches that number.
@@ -48,3 +48,17 @@ def find_by_number(cls,number):
         for contact in cls.contact_list:
             if contact.phone_number == number:
                 return contact
+
+def contact_exist(cls,number):
+        '''
+        Method that checks if a contact exists from the contact list.
+        Args:
+            number: Phone number to search if it exists
+        Returns :
+            Boolean: True or false depending if the contact exists
+        '''
+        for contact in cls.contact_list:
+            if contact.phone_number == number:
+                    return True
+
+        return False

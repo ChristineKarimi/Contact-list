@@ -71,7 +71,8 @@ def test_save_multiple_contact(self):
         '''
             test_save_multiple_contact to check if we can save multiple contact
             objects to our contact_list
-            '''
+
+        '''
             self.new_contact.save_contact()
             test_contact = Contact("Test","user","0712345678","test@user.com") # new contact
             test_contact.save_contact()
@@ -112,6 +113,22 @@ def test_save_multiple_contact(self):
         self.assertEqual(found_contact.email,test_contact.email)
                    
 
+#--------------------------------------------------------------------------------------------------------------------------------
+
+#Test 6
+
+def test_contact_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the contact.
+        '''
+
+        self.new_contact.save_contact()
+        test_contact = Contact("Test","user","0711223344","test@user.com") # new contact
+        test_contact.save_contact()
+
+        contact_exists = Contact.contact_exist("0711223344")
+
+        self.assertTrue(contact_exists)
 
 
 
