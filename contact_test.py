@@ -73,7 +73,7 @@ def test_save_multiple_contact(self):
             objects to our contact_list
 
         '''
-            self.new_contact.save_contact()
+           self.new_contact.save_contact()
             test_contact = Contact("Test","user","0712345678","test@user.com") # new contact
             test_contact.save_contact()
             self.assertEqual(len(Contact.contact_list),2)
