@@ -62,3 +62,10 @@ def contact_exist(cls,number):
                     return True
 
         return False
+
+def display_contacts(cls):
+        '''
+        method that returns the contact list
+        '''
+        return cls.contact_list
+   
